@@ -1,0 +1,29 @@
+<mat-card class="product">
+    <h1 class="product__title">
+        {{product.title}}
+    </h1>
+
+    <div class="product__details">
+        <p>{{product.description}}</p>
+
+        <p>Price: {{product.price | currency}}</p>
+        
+        <p>Category: {{product.category}}</p>
+        
+        <p>Is {{product.isAvailable ? '' : 'not' }} available</p>
+        
+        <p>
+            <span *ngFor="let tag of product.tags">#{{tag}} </span>
+        </p>
+    </div>
+
+    <button
+        mat-raised-button
+        color="primary"
+        class="btn btn-primary product__buy-button"
+        (click)="buyProduct()"
+        [disabled]="!product.isAvailable"
+    >
+        Buy
+    </button>
+</mat-card>

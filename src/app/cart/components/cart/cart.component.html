@@ -1,0 +1,33 @@
+<h1 class="cart__title">Your Cart</h1>
+
+<section 
+    *ngIf="cartItems.length > 0; else placeholder"
+    class="cart__items"
+>
+    <app-cart-item
+        *ngFor="let item of cartItems"
+        [cartItem]="item"
+    ></app-cart-item>
+
+    <div class="cart__footer">
+        <div class="cart__quantity">
+            You have {{quantity || 0}} items.
+        </div>
+
+        <div class="cart__total">
+            {{sum || 0 | currency}}
+        </div>
+
+        <button
+            mat-raised-button
+            color="primary"
+        >Order</button>
+    </div>
+</section>
+
+<ng-template #placeholder>
+    <section class="cart__no-items">
+        <h1>Your cart is empty</h1>
+        <button mat-raised-button color="primary" routerLink="/">Go shopping</button>
+    </section>
+</ng-template>

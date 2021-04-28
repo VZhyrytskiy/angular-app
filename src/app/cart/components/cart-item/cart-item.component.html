@@ -1,0 +1,36 @@
+<div class="cart-item">
+    <p class="cart-item__title">
+        {{cartItem.product.title}}
+    </p>
+
+    <div class="cart-item__details">
+        <p class="cart-item__price">
+            {{cartItem.product.price | currency}}
+        </p>
+
+        <button
+            mat-icon-button
+            class="cart-item__button"
+        >
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+
+        <p class="cart-item__quantity">
+            {{cartItem.quantity}}
+        </p>
+
+        <button
+            mat-icon-button
+            class="cart-item__button"
+        >
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+
+        <button
+            mat-icon-button
+            class="cart-item__remove-button"
+        >
+            <mat-icon>clear</mat-icon>
+        </button>
+    </div>
+</div>

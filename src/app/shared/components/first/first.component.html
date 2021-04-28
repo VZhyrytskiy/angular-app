@@ -1,0 +1,13 @@
+<h1>This is {{name}}</h1>
+
+<p>{{description}}</p>
+
+<p>Price: {{price | currency}}</p>
+
+<p>Category: {{category}}</p>
+
+<p>Is {{isAvailable ? '' : 'not' }} available</p>
+
+<p>
+    <span *ngFor="let tag of tags">#{{tag}} </span>
+</p>

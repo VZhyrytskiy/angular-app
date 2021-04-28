@@ -1,0 +1,8 @@
+<section class="products-list">
+    <app-product
+        *ngFor="let product of (products$ | async)"
+        class="products-list__item"
+        [product]="product"
+        (buy)="buyProduct($event)"
+    ></app-product>
+</section>
